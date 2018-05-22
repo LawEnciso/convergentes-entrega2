@@ -1,0 +1,31 @@
+<!--
+  Generated template for the AmbulanciasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+--> 
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ambulancias</ion-title>
+  </ion-navbar> 
+
+</ion-header>
+  
+
+<ion-content padding>
+  <table>
+    <tbody>
+      <tr *ngFor = 'let ambulancia of ambulancias'>
+        <td><ion-img style="height:50px; width:50px;" src='../assets/ambulance.svg'></ion-img></td>
+        <div class="separadorV"></div>
+        <div class="texto">
+            <td><label> Placa: {{ambulancia.placa}} <br> Conductor: {{ambulancia.conductor}}</label></td>
+        </div>
+        <td><button ion-button (click) = 'presentPrompt(ambulancia)'>Mod</button></td>
+        <hr/>
+      </tr>
+    </tbody>
+  </table>
+  <div class="boton" [navPush] = 'detalle'><button ion-button full>Ver detalles</button></div>
+  <div class="boton" [navPush] = 'crear'><button ion-button full>Crear</button></div></ion-content>
